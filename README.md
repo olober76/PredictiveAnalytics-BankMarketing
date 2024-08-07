@@ -280,3 +280,7 @@ Berikut adalah beberapa rekomendasi untuk bank yang dapat membantu meningkatkan 
 - Dengarkan lead dan kumpulkan lebih banyak informasi untuk memberikan rencana deposit terbaik, yang dapat meningkatkan durasi panggilan dan mengarah pada deposit.
 - Mendekati lead pada awal periode baru bank (Mei-Juli) akan menjadi pilihan yang baik karena banyak yang menunjukkan hasil positif dari data sejarah.
 - Sesuaikan kampanye sesuai dengan kondisi ekonomi nasional, jangan menyalurkan pengeluaran pada kampanye ketika ekonomi nasional sedang berkinerja buruk.
+
+### Referensi
+
+Moro, Sérgio, Paulo Cortez, and Paulo Rita. "A data-driven approach to predict the success of bank telemarketing." Decision Support Systems 62 (2014): 22-31.
