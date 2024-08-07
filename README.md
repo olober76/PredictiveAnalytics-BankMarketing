@@ -159,7 +159,7 @@ diperlukan juga feature engineering dan standarisasi , dan encoding untuk bebera
 5. **Ordinal Encoding** : menghapus fitur yang memiliki masukan string dan digantikan dengan ordinal number encoding (one hot encoding)
 6. **Frequency Encoding** : menggunakan frekuensi ecoding pada fitur 'job' dan 'education' menjadi key value pairs berdasarkan frekuensinya
 7. **Target Guided Ordinal Encoding** : mendefinisikan target Y , yaitu marital feature yang di enkodekan (diubah masukan datanya menjadi key:value pairs seperti {'divorced': 0, 'married': 1, 'single': 2, 'unknown': 3})
-8. **Standardization of numerical Variables** : melakukan standarisasi pada data yang sudah enkodekan
+8. **Standardization of numerical Variables** : melakukan standarisasi pada data yang sudah enkodekan , disini saya menggunakan fungsi StandardScaler(),yaitu proses mengubah skala data sehingga memiliki rata-rata 0 dan deviasi standar 1.
 9. **Feature Selection** : melihat mana fitur yang penting yangn nantinya akan di pangkas fiturnya agar model berjalan dengan baik
 10. **Train and Test Split (80:20)** : memisah data untuk dimasukan kedalam train dan test dengan rasio yang 80 banding 20
 
