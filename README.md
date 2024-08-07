@@ -82,7 +82,8 @@ Dilakukan juga visulisasi data untuk melihat data data numerik dari setiap atrib
 
 1. Duration of calls vs Job roles
 
-![Duration of calls vs Job roles](./Asset/Job%20vs%20Duration%20Calls.png)
+![Duration of calls vs Job roles](https://github.com/user-attachments/assets/a10ea559-7cb3-4287-a41e-b6f84e223100)
+
 
 - Prospek yang tidak melakukan deposito memiliki durasi panggilan yang lebih pendek.
 - Jika dibandingkan rata-ratanya, pekerja kasar dan pengusaha memiliki durasi panggilan yang tinggi, sedangkan pelajar dan pensiunan memiliki durasi panggilan rata-rata yang rendah.
@@ -90,7 +91,7 @@ Dilakukan juga visulisasi data untuk melihat data data numerik dari setiap atrib
 
 2. Campaign vs Duration Calls
 
-![Campaign vs Duration Calls](./Asset/Campaign%20vs%20Duration%20Calls.png)
+![Campaign vs Duration Calls](https://github.com/user-attachments/assets/9eae2865-390a-4820-a957-e6ea2c689f6d)
 
 - Semakin lama durasi panggilan, semakin tinggi probabilitas untuk melakukan deposito.
 - Durasi panggilan menurun seiring dengan berjalannya waktu kampanye.
@@ -98,7 +99,8 @@ Dilakukan juga visulisasi data untuk melihat data data numerik dari setiap atrib
 
 3. Campaign vs Month
 
-![Campaign vs Month](./Asset/Campaign%20vs%20Month.png)
+![Campaign vs Month](https://github.com/user-attachments/assets/a8c6edef-71db-407c-834f-76b811cd1552)
+
 
 - Kampanye sebagian besar terkonsentrasi pada awal periode bank (Mei, Juni, dan Juli).
 - Biasanya periode pendidikan dimulai pada waktu tersebut sehingga ada kemungkinan orang tua membuat deposito atas nama anak-anak mereka.
@@ -106,7 +108,7 @@ Dilakukan juga visulisasi data untuk melihat data data numerik dari setiap atrib
 
 4. Distribution of Quarterly Indicators
 
-![Distribution of Quarterly Indicators](./Asset/Distribution%20of%20Quartely%20Indicators.png)
+![Distribution of Quarterly Indicators](https://github.com/user-attachments/assets/a9e8c937-18e8-4eaa-bcc1-b2394c97bf97)
 
 - Terlihat adanya variasi karyawan yang tinggi yang menandakan bahwa kampanye dilakukan saat terjadi pergeseran pekerjaan yang tinggi akibat kondisi ekonomi.
 - Indeks harga konsumen yang baik menunjukkan bahwa prospek memiliki daya beli yang baik untuk barang dan jasa, yang mungkin menjadi alasan untuk mendorong mereka melakukan deposito dan menanamkan ide menabung.
@@ -116,18 +118,18 @@ Dilakukan juga visulisasi data untuk melihat data data numerik dari setiap atrib
 
 5. Marital Status vs Price index
 
-![Marital Status vs Price index](./Asset/Marital%20Status%20vs%20Price%20Index.png)
+![Marital Status vs Price index](https://github.com/user-attachments/assets/ad5240cf-d0cd-471a-800a-be6f4f8b14f8)
 
 - Terdapat perbedaan yang sangat kecil di antara indeks harga.
 - Prospek yang sudah menikah memiliki keunggulan yang signifikan karena mereka memiliki indeks yang berkontribusi sebagai pasangan.
 
 6. Positive deposits vs attributes
 
-![Positive deposits vs attributes](./Asset/Positive%20Deposits%20vs%20attributes.png)
+![Positive deposits vs attributes](https://github.com/user-attachments/assets/c09fc062-821f-4a1b-885a-ee96799647e6)
 
 7. Correlation plot of attributes
 
-![Correlation plot of attributes](./Asset/Correlation%20plot%20of%20attributes.png)
+![Correlation plot of attributes](https://github.com/user-attachments/assets/ff1cf3e3-7774-4235-ace8-a94c41e25af3)
 
 - Prospek yang sudah menikah membuat deposito tinggi diikuti oleh yang lajang.
 - Banyak deposito dilakukan pada bulan Mei karena itu adalah awal periode bank.
@@ -239,7 +241,7 @@ evaluasi ini diperlukan untuk melihat model yang diuji setelah mengalami hyper p
 
 evaluasi yang digunakan berupa matriks yang terdiri atas
 
-![Evaluation](./Asset/evaluation.png)
+![Evaluation](https://github.com/user-attachments/assets/6ec290fe-e08f-4266-9984-441b7f85d490)
 
 1. **Confusion Matrix**
 
@@ -270,9 +272,9 @@ False Negatives (FN): 376 (model memprediksi negatif tetapi salah)
 
 4. ROC Curve
 
-![Gambar ROC](./Asset/Roc.png)
+![Gambar ROC](https://github.com/user-attachments/assets/f4351dbc-6843-4fea-bc67-ed5f40ae0f14)
 
-Dari kurva ROC, kita dapat menyimpulkan bahwa model logisctic regression telah mengklasifikasikan prospek yang melakukan deposit dengan benar, bukan memprediksi positif palsu. Semakin kurva ROC (merah) terletak di sisi kiri atas, semakin baik model kita. Kita dapat memilih nilai apa pun antara 0,8 hingga 0,9 untuk nilai ambang batas yang dapat menghasilkan hasil positif yang sebenarnya.
+Dari kurva ROC,kita dapat menyimpulkan bahwa model logisctic regression telah mengklasifikasikan prospek yang melakukan deposit dengan benar, bukan memprediksi positif palsu. Semakin kurva ROC (merah) terletak di sisi kiri atas, semakin baik model kita. Kita dapat memilih nilai apa pun antara 0,8 hingga 0,9 untuk nilai ambang batas yang dapat menghasilkan hasil positif yang sebenarnya.
 
 **KESIMPULAN**
 
