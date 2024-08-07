@@ -166,8 +166,7 @@ disini menggunakan beberapa model yang akan saya coba jalan kan yakni
 1. Logistic Regression Accuracy: 0.882482599781859
 2. Decision Tree Accuracy: 0.6428312903816458
 3. KNN Accuracy: 0.8746929484882704
-4. SVC Accuracy: 0.9188718011316903
-5. Naive Bayes Accuracy: 0.8191811374646486
+4. Naive Bayes Accuracy: 0.8191811374646486
 
 Berikut adalah penjelasan tahapan kerja untuk setiap algoritma yang digunakan dalam kode tersebut:
 
@@ -192,14 +191,7 @@ Berikut adalah penjelasan tahapan kerja untuk setiap algoritma yang digunakan da
    - **Prediksi**: Model memprediksi kelas untuk sampel baru dengan melihat kelas dari k-tetangga terdekat dalam data pelatihan.
    - **Evaluasi**: Akurasi diuji menggunakan cross-validation (10-fold cross-validation) dan hasil rata-rata akurasi dilaporkan.
 
-4. **Support Vector Classifier (SVC)**:
-
-   - **Inisialisasi**: Objek `SVC` diinisialisasi.
-   - **Pelatihan**: Model SVC dilatih untuk menemukan hyperplane yang memisahkan kelas-kelas dalam fitur `X` dengan margin terbesar.
-   - **Prediksi**: Model memprediksi kelas berdasarkan sisi mana dari hyperplane sampel baru berada.
-   - **Evaluasi**: Akurasi diuji menggunakan cross-validation (10-fold cross-validation) dan hasil rata-rata akurasi dilaporkan.
-
-5. **Naive Bayes (BernoulliNB)**:
+4. **Naive Bayes (BernoulliNB)**:
    - **Inisialisasi**: Objek `BernoulliNB` diinisialisasi.
    - **Pelatihan**: Model Naive Bayes dilatih dengan menghitung probabilitas fitur biner terhadap setiap kelas.
    - **Prediksi**: Model memprediksi kelas dengan menghitung probabilitas posterior berdasarkan teorema Bayes.
