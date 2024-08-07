@@ -6,10 +6,6 @@ ini adalah dataset yang mendeskripsikan hasil dari portugal bank marketing campa
 
 Ini adalah kumpulan data yang menggambarkan hasil kampanye pemasaran bank di Portugal. Kampanye yang dilakukan sebagian besar berbasis panggilan telepon langsung, menawarkan kepada klien bank untuk menempatkan deposito berjangka. Jika setelah semua upaya pemasaran klien setuju untuk menempatkan deposito, variabel target ditandai dengan 'yes', jika tidak maka 'no'.
 
-Sumber data:
-
-[Link Dataset UCI](https://archive.ics.uci.edu/ml/datasets/bank+marketing)
-
 Ada penurunan pendapatan di bank Portugal dan mereka ingin mengetahui tindakan apa yang harus diambil. Setelah penyelidikan, ditemukan bahwa penyebab utamanya adalah karena klien mereka tidak melakukan deposito sesering sebelumnya. Mengetahui bahwa deposito berjangka memungkinkan bank untuk menahan dana untuk jangka waktu tertentu, sehingga bank dapat menginvestasikan dana tersebut dalam produk keuangan dengan keuntungan lebih tinggi untuk menghasilkan keuntungan. Selain itu, bank juga memiliki peluang lebih besar untuk membujuk klien deposito berjangka untuk membeli produk lain seperti reksa dana atau asuransi guna meningkatkan pendapatan mereka lebih lanjut. Akibatnya, bank Portugal ingin mengidentifikasi klien yang memiliki peluang lebih tinggi untuk berlangganan deposito berjangka dan fokus upaya pemasaran pada klien tersebut.
 
 **WHY IS IT IMPORTANT USING MACHINE LEARNING**
@@ -22,7 +18,7 @@ dengan latar belakang di atas problem statement yang bisa di definisikan adalah
 
 ### Problem Statement
 
-- Identifikasi klien yang memiliki peluang lebih tinggi untuk berlangganan depostio berjangaka panjang agar bisa fokus upaya pemasaran pada klien tersebut
+- Bagaimana cara mengidentifikasi klien yang memiliki peluang lebih tinggi untuk berlangganan depostio berjangaka panjang?
 
 ### Goals
 
@@ -30,9 +26,13 @@ dengan latar belakang di atas problem statement yang bisa di definisikan adalah
 
 ### Solution Stataments
 
-algoritma klasifikasi yang secara otomatis dapat mengklasifikasikan prospek Bank mengenai kemungkinan membuka deposito berjangka di bank mereka. saya akan membuat algoritma logistic regression dan juga memberikan wawasan yang saya peroleh dari dataset tersebut. Selain itu, saya akan membantu mereka mempersempit prospek ke dalam saluran pemasaran dan pada akhirnya membuka deposito berjangka.
+algoritma klasifikasi yang secara otomatis dapat mengklasifikasikan prospek Bank mengenai kemungkinan membuka deposito berjangka di bank mereka. saya akan membuat algoritma logistic regression dan juga memberikan wawasan yang saya peroleh dari dataset tersebut. Selain itu, saya akan membantu mereka mempersempit prospek ke dalam saluran pemasaran dan pada akhirnya membuka deposito berjangka. parameter keberhasilan algoritma logistic regression akan diukur oleh metrix evaluasi seperti confussion matrix, f1 score, akurasi, dan precision
 
 ## Data Understanding
+
+Sumber data:
+
+[Link Dataset UCI](https://archive.ics.uci.edu/ml/datasets/bank+marketing)
 
 **Dataset:**
 
@@ -84,7 +84,6 @@ Dilakukan juga visulisasi data untuk melihat data data numerik dari setiap atrib
 
 ![Duration of calls vs Job roles](https://github.com/user-attachments/assets/a10ea559-7cb3-4287-a41e-b6f84e223100)
 
-
 - Prospek yang tidak melakukan deposito memiliki durasi panggilan yang lebih pendek.
 - Jika dibandingkan rata-ratanya, pekerja kasar dan pengusaha memiliki durasi panggilan yang tinggi, sedangkan pelajar dan pensiunan memiliki durasi panggilan rata-rata yang rendah.
 - Sebagian besar prospek berasal dari klien wiraswasta dan orang-orang manajemen.
@@ -100,7 +99,6 @@ Dilakukan juga visulisasi data untuk melihat data data numerik dari setiap atrib
 3. Campaign vs Month
 
 ![Campaign vs Month](https://github.com/user-attachments/assets/a8c6edef-71db-407c-834f-76b811cd1552)
-
 
 - Kampanye sebagian besar terkonsentrasi pada awal periode bank (Mei, Juni, dan Juli).
 - Biasanya periode pendidikan dimulai pada waktu tersebut sehingga ada kemungkinan orang tua membuat deposito atas nama anak-anak mereka.
@@ -145,14 +143,14 @@ dilakukan checking null values untuk melihat adanya indikasi data bernilai 0 di 
 **Duplicating Data**
 dilakukan untuk melihat duplicating data di setiap instances
 
-**Handling Outliers**
-proses inii diperlakukan agar nanti model tidak terpengaruh nilai nilai ekstrim
-
 ## Data Preparation
 
 Bebebarapa tahapan yang diperlukan sebagai fitur fitur yang dipilih untuk pembentukan model klasifikasi yaitu
 
-diperlukan juga feature engineering untuk menghandling outliers, standarisasi , dan encoding untuk beberapa data yang bukan numerik di beberapa atribut
+**Handling Outliers**
+proses inii diperlakukan agar nanti model tidak terpengaruh nilai nilai ekstrim
+
+diperlukan juga feature engineering dan standarisasi , dan encoding untuk beberapa data yang bukan numerik di beberapa atribut
 
 1. **Education - category clubbing** : untuk mengelompokan data yang memiliki kategori dari basic9y sampai dengan middle school
 2. **Encoding - Month and Day of Week** : mengenkodekan kategori Month and Day of Week ke dalam respective numbers
