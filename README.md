@@ -2,15 +2,11 @@
 
 ## Domain Proyek
 
-ini adalah dataset yang mendeskripsikan hasil dari portugal bank marketing campaign
-
-Ini adalah kumpulan data yang menggambarkan hasil kampanye pemasaran bank di Portugal. Kampanye yang dilakukan sebagian besar berbasis panggilan telepon langsung, menawarkan kepada klien bank untuk menempatkan deposito berjangka. Jika setelah semua upaya pemasaran klien setuju untuk menempatkan deposito, variabel target ditandai dengan 'yes', jika tidak maka 'no'.
-
-Ada penurunan pendapatan di bank Portugal dan mereka ingin mengetahui tindakan apa yang harus diambil. Setelah penyelidikan, ditemukan bahwa penyebab utamanya adalah karena klien mereka tidak melakukan deposito sesering sebelumnya. Mengetahui bahwa deposito berjangka memungkinkan bank untuk menahan dana untuk jangka waktu tertentu, sehingga bank dapat menginvestasikan dana tersebut dalam produk keuangan dengan keuntungan lebih tinggi untuk menghasilkan keuntungan. Selain itu, bank juga memiliki peluang lebih besar untuk membujuk klien deposito berjangka untuk membeli produk lain seperti reksa dana atau asuransi guna meningkatkan pendapatan mereka lebih lanjut. Akibatnya, bank Portugal ingin mengidentifikasi klien yang memiliki peluang lebih tinggi untuk berlangganan deposito berjangka dan fokus upaya pemasaran pada klien tersebut.
+Terjadi penurunan pendapatan di bank Portugal dan mereka ingin mengetahui tindakan apa yang harus diambil Dari melihat dataset yang mendeksripsikan hasil dari Portugal Bank marketing Campaign. Setelah penyelidikan, ditemukan bahwa penyebab utamanya adalah karena klien mereka tidak melakukan deposito sesering sebelumnya. Mengetahui bahwa deposito berjangka memungkinkan bank untuk menahan dana untuk jangka waktu tertentu, sehingga bank dapat menginvestasikan dana tersebut dalam produk keuangan dengan keuntungan lebih tinggi untuk menghasilkan keuntungan. Selain itu, bank juga memiliki peluang lebih besar untuk membujuk klien deposito berjangka untuk membeli produk lain seperti reksa dana atau asuransi guna meningkatkan pendapatan mereka lebih lanjut. Akibatnya, bank Portugal ingin mengidentifikasi klien yang memiliki peluang lebih tinggi untuk berlangganan deposito berjangka dan fokus upaya pemasaran pada klien tersebut.
 
 **WHY IS IT IMPORTANT USING MACHINE LEARNING**
 
-masalah ini bisa diselesaikan machine learning karena dengan machine learning model bisa untuk menyortir beberapa atribut dengan tipe numerical data (dalam kasus ini yaitu nasabah yang melakukan deposit jangka panjang) yang di inginkan sehingga perlu adanya klasifikasi pada permasalahan ini
+masalah ini bisa diselesaikan machine learning karena dengan machine learning model bisa untuk mengklasifikasikan nasabah dengan melakukan deposit jangka panjang dari berdasarkan beberapa atribut dengan tipe numerical data yang di inginkan.
 
 ## Businees Understanding
 
@@ -22,7 +18,7 @@ dengan latar belakang di atas problem statement yang bisa di definisikan adalah
 
 ### Goals
 
-- Dengan mengetahui adanya klien yang berdeposit jangka panjang bank dapat menginvestasikan dalam produk keuangan dengan keuntungan lebih tinggi untuk mendapatkan keuntungan. Selain itu, bank juga memiliki peluang yang lebih baik untuk meyakinkan klien deposito berjangka untuk membeli produk lain seperti dana atau asuransi guna meningkatkan pendapatan mereka lebih lanjut.
+- Untuk mengetahui danya klien yang berdeposit jangka panjang sehingga bank dapat menginvestasikan dalam produk keuangan dengan keuntungan lebih tinggi untuk mendapatkan keuntungan.
 
 ### Solution Stataments
 
@@ -156,7 +152,7 @@ diperlukan juga feature engineering dan standarisasi , dan encoding untuk bebera
 2. **Encoding - Month and Day of Week** : mengenkodekan kategori Month and Day of Week ke dalam respective numbers
 3. **Encoding 999 in pdays as 0** : mengenkodekan nilai 999 dalam fitur pdays menjadi 0 (klien yang belum dikontak dalam campaign sebelumnya)
 4. **Ordinal Number Encoding** : Mengumbah fitur yang mempunyai nilai string seperti 'yes', 'no', dan 'unknown' menjadi yes:1,no:0 and unknown:-1
-5. **Ordinal Encoding** : menghapus fitur yang memiliki masukan string dan digantikan dengan ordinal number encoding (one hot encoding)
+5. **One Hot Encoding** : menghapus fitur yang memiliki masukan string dan digantikan dengan ordinal number encoding (one hot encoding)
 6. **Frequency Encoding** : menggunakan frekuensi ecoding pada fitur 'job' dan 'education' menjadi key value pairs berdasarkan frekuensinya
 7. **Target Guided Ordinal Encoding** : mendefinisikan target Y , yaitu marital feature yang di enkodekan (diubah masukan datanya menjadi key:value pairs seperti {'divorced': 0, 'married': 1, 'single': 2, 'unknown': 3})
 8. **Standardization of numerical Variables** : melakukan standarisasi pada data yang sudah enkodekan , disini saya menggunakan fungsi StandardScaler(),yaitu proses mengubah skala data sehingga memiliki rata-rata 0 dan deviasi standar 1.
