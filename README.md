@@ -32,7 +32,7 @@ Sumber data:
 
 **Dataset:**
 
-Data yang disediakan memiliki 4118 instance dan 21 fitur. Informasinya mengatakan tidak ada nilai nol. Bagaimanapun, perlu dilakukan pengawasan ketat di setiap fitur dan memeriksa catatan yang mencurigakan serta memanipulasinya.
+Data yang disediakan memiliki 41188 instance dan 21 fitur. Informasinya mengatakan tidak ada nilai nol. Bagaimanapun, perlu dilakukan pengawasan ketat di setiap fitur dan memeriksa catatan yang mencurigakan serta memanipulasinya.
 
 **Atribut:**
 **Data klien bank:**
