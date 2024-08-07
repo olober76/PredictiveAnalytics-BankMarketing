@@ -161,7 +161,7 @@ diperlukan juga feature engineering dan standarisasi , dan encoding untuk bebera
 
 ## Modelling
 
-disini menggunakan beberapa model yang akan saya coba jalan kan yakni
+disini menggunakan beberapa model yang akan dijadikan uji banding dengan model Logistic regression dan ini menjadi alasan kenapa saya memilih logistic regression
 
 1. Logistic Regression Accuracy: 0.882482599781859
 2. Decision Tree Accuracy: 0.6428312903816458
@@ -205,7 +205,11 @@ Berikut adalah penjelasan tahapan kerja untuk setiap algoritma yang digunakan da
 
 Tujuan utama dari pendekatan ini adalah untuk membandingkan kinerja berbagai algoritma klasifikasi pada dataset yang sama dan memilih algoritma yang memberikan akurasi terbaik untuk prediksi apakah prospek akan membuka deposito berjangka.
 
-dari semua model setelah di uji, logistic regression memiliki akurasi kedua lebih tinggi (88%) setelah SVM , ini dikarenakan logistic regression lebih cocok dalam mengklasifikasikan dua jenis label saja sehingga saya memilih model ini dengan beberapa parameter tuning
+### WHY USING LOGISTIC REGRESSION
+
+dari semua model setelah di uji, logistic regression memiliki akurasi kedua lebih tinggi (88%) , ini dikarenakan logistic regression lebih cocok dalam mengklasifikasikan dua jenis label saja sehingga saya memilih model ini dengan beberapa parameter tuning
+
+Dengan begitu , saya memilih skema logistic regression yang ditambahkan hyper parameter tuning agar meningkatkan akurasi dan nanti saya akan berikan hasi evaluasinya
 
 tahapan Logisctic classifier yang dilakukan yaitu
 
