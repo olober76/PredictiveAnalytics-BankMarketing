@@ -26,11 +26,11 @@ dengan latar belakang di atas problem statement yang bisa di definisikan adalah
 
 ### Goals
 
-- agar Bank bisa fokus pada klien yang berdeposit berjangka panjang agar tidak mengalami pendapatan minim
+- Dengan mengetahui adanya klien yang berdeposit jangka panjang bank dapat menginvestasikan dalam produk keuangan dengan keuntungan lebih tinggi untuk mendapatkan keuntungan. Selain itu, bank juga memiliki peluang yang lebih baik untuk meyakinkan klien deposito berjangka untuk membeli produk lain seperti dana atau asuransi guna meningkatkan pendapatan mereka lebih lanjut.
 
 ### Solution Stataments
 
-Salah satu metode yang dapat menjawab goals di atas adalah dengan membuat model logical regression degan memprediksi apakah ada deposito yang dilakukan berdasarkan nilai-nilai dari fitur-fitur tersebut. Hasilnya akan berupa 0 atau 1. Jadi,saya dapat memutuskan untuk menggunakan model klasifikasi untuk masalah ini.
+algoritma klasifikasi yang secara otomatis dapat mengklasifikasikan prospek Bank mengenai kemungkinan membuka deposito berjangka di bank mereka. saya akan membuat algoritma logistic regression dan juga memberikan wawasan yang saya peroleh dari dataset tersebut. Selain itu, saya akan membantu mereka mempersempit prospek ke dalam saluran pemasaran dan pada akhirnya membuka deposito berjangka.
 
 ## Data Understanding
 
@@ -77,8 +77,62 @@ Data yang disediakan memiliki 4118 instance dan 21 fitur. Informasinya mengataka
 
 21. **Y** - Apakah klien berlangganan deposito berjangka? (biner: 'yes', 'no')
 
-**CATATAN**
-Dilakukan juga visulisasi data untuk melihat data data numerik dari setiap atribut dan persebarannya
+**VISUALISASI**
+Dilakukan juga visulisasi data untuk melihat data data numerik dari setiap atribut dan persebarannya yang dimana akan menjadi bahan pertimbangan dalam melakukan feature engineering
+
+1. Duration of calls vs Job roles
+
+![Duration of calls vs Job roles](./Asset/Job%20vs%20Duration%20Calls.png)
+
+- Prospek yang tidak melakukan deposito memiliki durasi panggilan yang lebih pendek.
+- Jika dibandingkan rata-ratanya, pekerja kasar dan pengusaha memiliki durasi panggilan yang tinggi, sedangkan pelajar dan pensiunan memiliki durasi panggilan rata-rata yang rendah.
+- Sebagian besar prospek berasal dari klien wiraswasta dan orang-orang manajemen.
+
+2. Campaign vs Duration Calls
+
+![Campaign vs Duration Calls](./Asset/Campaign%20vs%20Duration%20Calls.png)
+
+- Semakin lama durasi panggilan, semakin tinggi probabilitas untuk melakukan deposito.
+- Durasi panggilan menurun seiring dengan berjalannya waktu kampanye.
+- Terdapat banyak prospek positif pada hari-hari awal kampanye.
+
+3. Campaign vs Month
+
+![Campaign vs Month](./Asset/Campaign%20vs%20Month.png)
+
+- Kampanye sebagian besar terkonsentrasi pada awal periode bank (Mei, Juni, dan Juli).
+- Biasanya periode pendidikan dimulai pada waktu tersebut sehingga ada kemungkinan orang tua membuat deposito atas nama anak-anak mereka.
+- Mereka juga melakukan kampanye di akhir periode bank.
+
+4. Distribution of Quarterly Indicators
+
+![Distribution of Quarterly Indicators](./Asset/Distribution%20of%20Quartely%20Indicators.png)
+
+- Terlihat adanya variasi karyawan yang tinggi yang menandakan bahwa kampanye dilakukan saat terjadi pergeseran pekerjaan yang tinggi akibat kondisi ekonomi.
+- Indeks harga konsumen yang baik menunjukkan bahwa prospek memiliki daya beli yang baik untuk barang dan jasa, yang mungkin menjadi alasan untuk mendorong mereka melakukan deposito dan menanamkan ide menabung.
+- Indeks kepercayaan konsumen cukup rendah karena mereka tidak memiliki banyak kepercayaan pada ekonomi yang berfluktuasi.
+- Suku bunga Euribor 3 bulan adalah suku bunga di mana sejumlah bank Eropa meminjamkan dana dalam bentuk euro satu sama lain dengan jangka waktu 3 bulan. Dalam kasus kami, suku bunga pinjaman tinggi.
+- Jumlah karyawan juga mencapai puncaknya, yang dapat meningkatkan indeks pendapatan mereka. Hal ini mungkin menjadi alasan kampanye menargetkan prospek yang bekerja untuk melakukan deposito.
+
+5. Marital Status vs Price index
+
+![Marital Status vs Price index](./Asset/Marital%20Status%20vs%20Price%20Index.png)
+
+- Terdapat perbedaan yang sangat kecil di antara indeks harga.
+- Prospek yang sudah menikah memiliki keunggulan yang signifikan karena mereka memiliki indeks yang berkontribusi sebagai pasangan.
+
+6. Positive deposits vs attributes
+
+![Positive deposits vs attributes](./Asset/Positive%20Deposits%20vs%20attributes.png)
+
+7. Correlation plot of attributes
+
+![Correlation plot of attributes](./Asset/Correlation%20plot%20of%20attributes.png)
+
+- Prospek yang sudah menikah membuat deposito tinggi diikuti oleh yang lajang.
+- Banyak deposito dilakukan pada bulan Mei karena itu adalah awal periode bank.
+- Prospek yang bekerja di posisi administrasi membuat deposito, diikuti oleh teknisi dan pekerja kasar.
+- Prospek yang memiliki setidaknya gelar universitas membuat deposito diikuti oleh lulusan sekolah menengah.
 
 Proses data Understanding dilakukan agar tidak mempengaruhi proses klasifikasi nantinya, beberapa proses pengecekan data yang saya lakukan yaitu
 
@@ -113,13 +167,57 @@ diperlukan juga feature engineering untuk menghandling outliers, standarisasi , 
 
 disini menggunakan beberapa model yang akan saya coba jalan kan yakni
 
-1. Logistic Regression
-2. Decision Tree
-3. KNN
-4. SVC
-5. Naive Bayes
+1. Logistic Regression Accuracy: 0.882482599781859
+2. Decision Tree Accuracy: 0.6428312903816458
+3. KNN Accuracy: 0.8746929484882704
+4. SVC Accuracy: 0.9188718011316903
+5. Naive Bayes Accuracy: 0.8191811374646486
 
-dari semua model setelah di uji, logistic regression memiliki akurasi kedua lebih tinggi (82%) setelah SVM , ini dikarenakan semua atribut memiliki korelasi yang kuat satu sama lain sehingga saya memilih model dengan beberapa parameter tuning
+Berikut adalah penjelasan tahapan kerja untuk setiap algoritma yang digunakan dalam kode tersebut:
+
+1. **Logistic Regression (Regresi Logistik)**:
+
+   - **Inisialisasi**: Objek `LogisticRegression` diinisialisasi dengan parameter `random_state=0` untuk memastikan hasil yang konsisten di setiap run.
+   - **Pelatihan**: Model regresi logistik dilatih pada data pelatihan `X` (fitur) dan `y` (label).
+   - **Prediksi**: Model memprediksi probabilitas kejadian suatu kelas berdasarkan fitur input.
+   - **Evaluasi**: Akurasi diuji menggunakan cross-validation (10-fold cross-validation) dan hasil rata-rata akurasi dilaporkan.
+
+2. **Decision Tree (Pohon Keputusan)**:
+
+   - **Inisialisasi**: Objek `DecisionTreeClassifier` diinisialisasi.
+   - **Pelatihan**: Model pohon keputusan dilatih pada data `X` dan `y`.
+   - **Prediksi**: Model membagi data berdasarkan fitur yang memberikan informasi paling banyak tentang kelas target dan memprediksi kelas berdasarkan aturan yang diturunkan.
+   - **Evaluasi**: Akurasi diuji menggunakan cross-validation (10-fold cross-validation) dan hasil rata-rata akurasi dilaporkan.
+
+3. **K-Nearest Neighbors (KNN)**:
+
+   - **Inisialisasi**: Objek `KNeighborsClassifier` diinisialisasi.
+   - **Pelatihan**: Model KNN tidak melakukan pelatihan eksplisit, namun menyimpan data pelatihan untuk digunakan saat prediksi.
+   - **Prediksi**: Model memprediksi kelas untuk sampel baru dengan melihat kelas dari k-tetangga terdekat dalam data pelatihan.
+   - **Evaluasi**: Akurasi diuji menggunakan cross-validation (10-fold cross-validation) dan hasil rata-rata akurasi dilaporkan.
+
+4. **Support Vector Classifier (SVC)**:
+
+   - **Inisialisasi**: Objek `SVC` diinisialisasi.
+   - **Pelatihan**: Model SVC dilatih untuk menemukan hyperplane yang memisahkan kelas-kelas dalam fitur `X` dengan margin terbesar.
+   - **Prediksi**: Model memprediksi kelas berdasarkan sisi mana dari hyperplane sampel baru berada.
+   - **Evaluasi**: Akurasi diuji menggunakan cross-validation (10-fold cross-validation) dan hasil rata-rata akurasi dilaporkan.
+
+5. **Naive Bayes (BernoulliNB)**:
+   - **Inisialisasi**: Objek `BernoulliNB` diinisialisasi.
+   - **Pelatihan**: Model Naive Bayes dilatih dengan menghitung probabilitas fitur biner terhadap setiap kelas.
+   - **Prediksi**: Model memprediksi kelas dengan menghitung probabilitas posterior berdasarkan teorema Bayes.
+   - **Evaluasi**: Akurasi diuji menggunakan cross-validation (10-fold cross-validation) dan hasil rata-rata akurasi dilaporkan.
+
+**Proses Evaluasi dengan Cross-Validation**:
+
+- **Cross-Validation (10-Fold)**: Dataset dibagi menjadi 10 bagian (folds). Model dilatih pada 9 bagian dan diuji pada 1 bagian, dan proses ini diulang 10 kali sehingga setiap bagian menjadi set uji satu kali.
+- **Scoring**: Setiap model dievaluasi berdasarkan akurasi prediksi pada set uji.
+- **Rata-rata Akurasi**: Rata-rata akurasi dari 10 fold dilaporkan untuk setiap model, memberikan gambaran umum tentang kinerja model pada data tersebut.
+
+Tujuan utama dari pendekatan ini adalah untuk membandingkan kinerja berbagai algoritma klasifikasi pada dataset yang sama dan memilih algoritma yang memberikan akurasi terbaik untuk prediksi apakah prospek akan membuka deposito berjangka.
+
+dari semua model setelah di uji, logistic regression memiliki akurasi kedua lebih tinggi (88%) setelah SVM , ini dikarenakan logistic regression lebih cocok dalam mengklasifikasikan dua jenis label saja sehingga saya memilih model ini dengan beberapa parameter tuning
 
 tahapan Logisctic classifier yang dilakukan yaitu
 
@@ -141,19 +239,7 @@ evaluasi ini diperlukan untuk melihat model yang diuji setelah mengalami hyper p
 
 evaluasi yang digunakan berupa matriks yang terdiri atas
 
-Confusion Matrix:
-[[6390  148]
- [ 376  199]]
-Classification Report:
-precision recall f1-score support
-
-           0       0.94      0.98      0.96      6538
-           1       0.57      0.35      0.43       575
-
-    accuracy                           0.93      7113
-
-macro avg 0.76 0.66 0.70 7113
-weighted avg 0.91 0.93 0.92 7113
+![Evaluation](./Asset/evaluation.png)
 
 1. **Confusion Matrix**
 
@@ -187,3 +273,14 @@ False Negatives (FN): 376 (model memprediksi negatif tetapi salah)
 ![Gambar ROC](./Asset/Roc.png)
 
 Dari kurva ROC, kita dapat menyimpulkan bahwa model logisctic regression telah mengklasifikasikan prospek yang melakukan deposit dengan benar, bukan memprediksi positif palsu. Semakin kurva ROC (merah) terletak di sisi kiri atas, semakin baik model kita. Kita dapat memilih nilai apa pun antara 0,8 hingga 0,9 untuk nilai ambang batas yang dapat menghasilkan hasil positif yang sebenarnya.
+
+**KESIMPULAN**
+
+Dari bagian EDA dan pemilihan model logisctic regression , kita dapat mengidentifikasi dengan jelas bahwa durasi memainkan peran penting dalam menentukan hasil dari dataset kita. Jelas bahwa semakin banyak lead yang tertarik untuk memulai deposit, jumlah panggilan akan lebih tinggi dan durasi panggilan akan lebih lama daripada rata-rata. Kami juga menemukan bahwa pekerjaan dan pendidikan juga berperan penting dan sangat mempengaruhi hasil.
+
+Berikut adalah beberapa rekomendasi untuk bank yang dapat membantu meningkatkan tingkat deposit:
+
+- Klasifikasikan peran pekerjaan berdasarkan tingkatan korporat dan dekati semua karyawan tingkatan 1 dalam beberapa hari setelah kampanye dimulai.
+- Dengarkan lead dan kumpulkan lebih banyak informasi untuk memberikan rencana deposit terbaik, yang dapat meningkatkan durasi panggilan dan mengarah pada deposit.
+- Mendekati lead pada awal periode baru bank (Mei-Juli) akan menjadi pilihan yang baik karena banyak yang menunjukkan hasil positif dari data sejarah.
+- Sesuaikan kampanye sesuai dengan kondisi ekonomi nasional, jangan menyalurkan pengeluaran pada kampanye ketika ekonomi nasional sedang berkinerja buruk.
