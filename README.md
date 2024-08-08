@@ -205,15 +205,7 @@ Berikut adalah penjelasan tahapan kerja untuk setiap algoritma yang digunakan da
 - **Scoring**: Setiap model dievaluasi berdasarkan akurasi prediksi pada set uji.
 - **Rata-rata Akurasi**: Rata-rata akurasi dari 10 fold dilaporkan untuk setiap model, memberikan gambaran umum tentang kinerja model pada data tersebut.
 
-Tujuan utama dari pendekatan ini adalah untuk membandingkan kinerja berbagai algoritma klasifikasi pada dataset yang sama dan memilih algoritma yang memberikan akurasi terbaik untuk prediksi apakah prospek akan membuka deposito berjangka.
-
-## Evaluasi
-
-### WHY USING LOGISTIC REGRESSION
-
-dari semua model setelah di uji, logistic regression memiliki akurasi kedua lebih tinggi (88%) , ini dikarenakan logistic regression lebih cocok dalam mengklasifikasikan dua jenis label saja sehingga saya memilih model ini dengan beberapa parameter tuning
-
-Dengan begitu , saya memilih skema logistic regression yang ditambahkan hyper parameter tuning agar meningkatkan akurasi dan nanti saya akan berikan hasi evaluasinya
+skema hyper parameter tuning agar diperlukan agar meningkatkan akurasi dan nanti saya akan berikan hasi evaluasinya
 
 tahapan Logisctic classifier yang dilakukan yaitu
 
@@ -229,9 +221,19 @@ Dengan melakukan pencarian hyperparameter (hyperparameter tuning) untuk model re
 
 - Setelah itu, sebuah model regresi logistik baru dibuat dengan nilai tertentu yang ditemukan dari akan dilatih kembali dengan data pelatihan. Akurasi model ini pada set data uji dicetak untuk menilai performanya.
 
+Tujuan utama dari pendekatan ini adalah untuk membandingkan kinerja berbagai algoritma klasifikasi pada dataset yang sama dan memilih algoritma yang memberikan akurasi terbaik untuk prediksi apakah prospek akan membuka deposito berjangka.
+
+## Evaluasi
+
+### WHY USING LOGISTIC REGRESSION
+
+dari semua model setelah di uji, logistic regression memiliki akurasi kedua lebih tinggi (88%) , ini dikarenakan logistic regression lebih cocok dalam mengklasifikasikan dua jenis label saja sehingga saya memilih model ini dengan beberapa parameter tuning
+
+Dengan begitu , saya menggunakan Hyperparameter Tuning
+
 evaluasi ini diperlukan untuk melihat model yang diuji setelah mengalami hyper parameter tuning yang telah meningkat akurasinya menjadi 92%
 
-evaluasi yang digunakan berupa matriks yang terdiri atas
+evaluasi dari hasil hyper parameter tuning yang digunakan berupa matriks yang terdiri atas
 
 ![Evaluation](https://github.com/user-attachments/assets/6ec290fe-e08f-4266-9984-441b7f85d490)
 
