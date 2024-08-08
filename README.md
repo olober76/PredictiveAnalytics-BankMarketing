@@ -225,11 +225,55 @@ Tujuan utama dari pendekatan ini adalah untuk membandingkan kinerja berbagai alg
 
 ## Evaluasi
 
+Evaluasi akurasi model tanpa Hyper parameter Tuning dijelaskan sebagai berikut
+
+### Evaluasi Model dan Interpretasinya
+
+**Logistic Regression**
+
+- **Test Accuracy: 0.882**
+- **Interpretasi**: Logistic Regression menunjukkan akurasi yang sangat baik. Ini berarti model ini dapat dengan cukup akurat membedakan antara klien yang mungkin berlangganan deposito berjangka dan yang tidak. Logistic Regression cenderung memberikan prediksi yang stabil dan robust, terutama jika data memiliki hubungan linear antara fitur dan target.
+
+**Decision Tree**
+
+- **Test Accuracy: 0.639**
+- **Interpretasi**: Decision Tree memiliki akurasi yang lebih rendah dibandingkan dengan model lainnya. Ini menunjukkan bahwa model ini mungkin mengalami overfitting atau kurang dapat menangkap kompleksitas data secara efektif. Meskipun Decision Tree mudah diinterpretasikan, performanya yang rendah menunjukkan bahwa model ini tidak cocok untuk masalah ini.
+
+**K-Nearest Neighbors (KNN)**
+
+- **Test Accuracy: 0.875**
+- **Interpretasi**: KNN menunjukkan akurasi yang tinggi, hampir setara dengan Logistic Regression. Ini menunjukkan bahwa KNN dapat dengan baik menangkap pola dalam data. Namun, KNN bisa menjadi lambat dan tidak efisien pada dataset yang besar, dan performanya sangat tergantung pada pemilihan parameter seperti jumlah tetangga terdekat (k).
+
+**Naive Bayes**
+
+- **Test Accuracy: 0.819**
+- **Interpretasi**: Naive Bayes memiliki akurasi yang cukup baik tetapi masih lebih rendah dari Logistic Regression dan KNN. Model ini bekerja dengan asumsi independensi antar fitur yang jarang terjadi di dunia nyata, yang mungkin menjelaskan mengapa performanya tidak sebaik Logistic Regression atau KNN.
+
+### Implikasi Terhadap Business Understanding
+
+**Logistic Regression**
+
+- **Implikasi**: Dengan akurasi tertinggi, model ini paling efektif dalam mengidentifikasi klien yang memiliki peluang lebih tinggi untuk berlangganan deposito berjangka. Bank dapat menggunakan model ini untuk memfokuskan upaya pemasaran mereka pada klien yang diidentifikasi oleh model, meningkatkan efektivitas kampanye pemasaran dan potensi pendapatan dari deposito berjangka serta produk keuangan lainnya.
+
+**Decision Tree**
+
+- **Implikasi**: Performanya yang rendah menunjukkan bahwa model ini tidak efektif dalam mengidentifikasi klien yang potensial. Menggunakan model ini dapat mengarah pada keputusan pemasaran yang tidak optimal, menyebabkan bank kehilangan peluang untuk meningkatkan pendapatan.
+
+**K-Nearest Neighbors (KNN)**
+
+- **Implikasi**: Dengan akurasi yang hampir setara dengan Logistic Regression, KNN bisa menjadi alternatif yang baik. Namun, bank harus mempertimbangkan efisiensi dan skalabilitas model ini terutama jika dataset sangat besar. Model ini bisa digunakan sebagai backup atau untuk memverifikasi hasil dari Logistic Regression.
+
+**Naive Bayes**
+
+- **Implikasi**: Meskipun memiliki akurasi yang layak, model ini tidak seefektif Logistic Regression atau KNN. Namun, karena kesederhanaannya dan kecepatan dalam pelatihan, Naive Bayes dapat digunakan untuk memberikan analisis awal atau untuk mengidentifikasi pola umum dalam data sebelum menggunakan model yang lebih kompleks.
+
+Dari hasil evaluasi, jelas bahwa Logistic Regression adalah model yang paling efektif untuk masalah ini. Dengan menggunakannya, bank Portugal dapat lebih akurat mengidentifikasi klien yang berpotensi berlangganan deposito berjangka, memungkinkan mereka untuk memfokuskan upaya pemasaran dan meningkatkan pendapatan secara signifikan. KNN dapat menjadi alternatif, namun efisiensi harus diperhatikan. Decision Tree dan Naive Bayes, meskipun memiliki manfaat tertentu, tidak disarankan untuk digunakan sebagai model utama dalam konteks ini karena performanya yang kurang optimal.
+
 ### WHY USING LOGISTIC REGRESSION
 
-dari semua model setelah di uji, logistic regression memiliki akurasi kedua lebih tinggi (88%) , ini dikarenakan logistic regression lebih cocok dalam mengklasifikasikan dua jenis label saja sehingga saya memilih model ini dengan beberapa parameter tuning
+Dari hasil evaluasi, jelas bahwa Logistic Regression adalah model yang paling efektif untuk masalah ini (88%). Dengan menggunakannya, bank Portugal dapat lebih akurat mengidentifikasi klien yang berpotensi berlangganan deposito berjangka, memungkinkan mereka untuk memfokuskan upaya pemasaran dan meningkatkan pendapatan secara signifikan. KNN dapat menjadi alternatif, namun efisiensi harus diperhatikan. Decision Tree dan Naive Bayes, meskipun memiliki manfaat tertentu, tidak disarankan untuk digunakan sebagai model utama dalam konteks ini karena performanya yang kurang optimal.
 
-Dengan begitu , saya menggunakan Hyperparameter Tuning
+Dengan begitu , saya menggunakan Hyperparameter Tuning pada logistic regression agar akurasinya semakin meningkat
 
 evaluasi ini diperlukan untuk melihat model yang diuji setelah mengalami hyper parameter tuning yang telah meningkat akurasinya menjadi 92%
 
