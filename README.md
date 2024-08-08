@@ -163,10 +163,10 @@ diperlukan juga feature engineering dan standarisasi , dan encoding untuk bebera
 
 disini menggunakan beberapa model yang akan dijadikan uji banding dengan model Logistic regression dan ini menjadi alasan kenapa saya memilih logistic regression
 
-1. Logistic Regression Accuracy: 0.882482599781859
-2. Decision Tree Accuracy: 0.6428312903816458
-3. KNN Accuracy: 0.8746929484882704
-4. Naive Bayes Accuracy: 0.8191811374646486
+1. Logistic Regression Accuracy
+2. Decision Tree Accuracy
+3. KNN Accuracy
+4. Naive Bayes Accuracy
 
 Berikut adalah penjelasan tahapan kerja untuk setiap algoritma yang digunakan dalam kode tersebut:
 
