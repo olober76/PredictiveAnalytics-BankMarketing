@@ -170,6 +170,8 @@ disini menggunakan beberapa model yang akan dijadikan uji banding dengan model L
 
 Berikut adalah penjelasan tahapan kerja untuk setiap algoritma yang digunakan dalam kode tersebut:
 
+**TAHAPAN KERJA DAN PARAMETER**
+
 1. **Logistic Regression (Regresi Logistik)**:
 
    - **Inisialisasi**: Objek `LogisticRegression` diinisialisasi dengan parameter `random_state=0` untuk memastikan hasil yang konsisten di setiap run.
@@ -205,6 +207,8 @@ Berikut adalah penjelasan tahapan kerja untuk setiap algoritma yang digunakan da
 
 Tujuan utama dari pendekatan ini adalah untuk membandingkan kinerja berbagai algoritma klasifikasi pada dataset yang sama dan memilih algoritma yang memberikan akurasi terbaik untuk prediksi apakah prospek akan membuka deposito berjangka.
 
+## Evaluasi
+
 ### WHY USING LOGISTIC REGRESSION
 
 dari semua model setelah di uji, logistic regression memiliki akurasi kedua lebih tinggi (88%) , ini dikarenakan logistic regression lebih cocok dalam mengklasifikasikan dua jenis label saja sehingga saya memilih model ini dengan beberapa parameter tuning
@@ -224,8 +228,6 @@ Dengan melakukan pencarian hyperparameter (hyperparameter tuning) untuk model re
 - Hasil dari model terbaik dicetak , serta akurasi rata-rata model pada data uji (`X_test` dan `y_test`).
 
 - Setelah itu, sebuah model regresi logistik baru dibuat dengan nilai tertentu yang ditemukan dari akan dilatih kembali dengan data pelatihan. Akurasi model ini pada set data uji dicetak untuk menilai performanya.
-
-## Evaluasi
 
 evaluasi ini diperlukan untuk melihat model yang diuji setelah mengalami hyper parameter tuning yang telah meningkat akurasinya menjadi 92%
 
